@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff795f">
+  <title>Happy Birthday, Tuhina!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone">
+    <div class="topline"><span>✦ A LITTLE SURPRISE ✦</span><span id="stepLabel">01 / 05</span></div>
+
+    <section class="screen active" data-screen="0">
+      <div class="sticker">🎁</div>
+      <p class="eyebrow">HEY, TUHINA!</p>
+      <h1>Someone made<br>a little thing<br><em>just for you.</em></h1>
+      <p class="sub">The birthday surprise is cute, but wait till you unlock everything inside ✨</p>
+      <button class="primary" data-next>Open your surprise ↗</button>
+    </section>
+
+    <section class="screen" data-screen="1">
+      <div class="sticker">🕵️‍♀️</div>
+      <p class="eyebrow">QUICK QUESTION</p>
+      <h1>Are you<br><em>really ready?</em></h1>
+      <p class="sub">No skipping the birthday magic 😌</p>
+      <div class="choices">
+        <button class="primary" data-next>YES, YES! ✨</button>
+        <button class="secondary" id="tease">Not yet 🙈</button>
+      </div>
+      <p class="tiny" id="teaseText" aria-live="polite"></p>
+    </section>
+
+    <section class="screen" data-screen="2">
+      <div class="sticker">🕯️</div>
+      <p class="eyebrow">MAKE A WISH</p>
+      <h1>Make a wish<br><em>and blow out</em><br>the candles 🎂</h1>
+      <div class="cake">🎂</div>
+      <p class="sub">May this new year bring you plenty of reasons to smile.</p>
+      <button class="primary" data-next>Wish made! ✨</button>
+    </section>
+
+    <section class="screen" data-screen="3">
+      <div class="sticker">💌</div>
+      <p class="eyebrow">A LITTLE NOTE</p>
+      <h1>Happy Birthday,<br><em>Tuhina!</em></h1>
+      <div class="note">
+        Happy Birthday, Tuhina! 💗 You make ordinary days feel special. I hope your day brings you smiles, peace, laughter, and beautiful memories. Keep shining and keep being the wonderful person you are. You deserve so many good things. 🎉
+      </div>
+      <button class="primary" data-next>One last thing →</button>
+    </section>
+
+    <section class="screen" data-screen="4">
+      <div class="sticker">🌟</div>
+      <p class="eyebrow">YOUR NEXT CHAPTER</p>
+      <h1>May you achieve<br><em>everything</em><br>you’ve been waiting for!</h1>
+      <p class="sub">Stay happy, stay awesome, and enjoy your day to the fullest. 🎈</p>
+      <button class="primary" id="replay">Replay the surprise ↻</button>
+      <p class="signature">Made with love, just for you ♡</p>
+    </section>
+
+    <div class="bottomline"><span>HAPPY BIRTHDAY</span><span>♡</span></div>
+  </main>
+  <div class="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>

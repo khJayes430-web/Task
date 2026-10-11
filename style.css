@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap');
+
+:root {
+  --coral: #ff765f;
+  --orange: #ffb24d;
+  --cream: #fff5e8;
+  --ink: #29222a;
+  --pink: #ffd7cf;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  color: var(--ink);
+  background: #201b27;
+  font-family: "DM Sans", sans-serif;
+}
+.phone {
+  width: min(100%, 390px);
+  min-height: min(740px, calc(100svh - 36px));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 21px 22px 18px;
+  border: 5px solid #fff0df;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255,255,255,.4), transparent 28%),
+    linear-gradient(145deg, #ffb36e, #ff8169 55%, #f36f77);
+  box-shadow: 0 28px 90px rgba(0,0,0,.35);
+}
+.topline, .bottomline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(54,32,37,.72);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+.screen {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px 2px;
+  animation: enter .45s ease both;
+}
+.screen.active { display: flex; }
+.sticker {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 17px;
+  border: 3px solid var(--cream);
+  border-radius: 30px 30px 36px 30px;
+  background: #fff2df;
+  box-shadow: 7px 7px 0 rgba(105,46,51,.12);
+  font-size: 50px;
+  transform: rotate(-4deg);
+}
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+h1 {
+  margin: 0;
+  font-family: "Fredoka", "DM Sans", sans-serif;
+  font-size: clamp(36px, 10vw, 48px);
+  line-height: 1.04;
+  letter-spacing: -1.2px;
+}
+h1 em { color: var(--cream); font-style: normal; }
+.sub {
+  max-width: 285px;
+  margin: 17px auto 23px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(48,33,39,.82);
+}
+.primary, .secondary {
+  width: 100%;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 14px 15px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.primary {
+  color: var(--cream);
+  background: var(--ink);
+  box-shadow: 0 5px 0 rgba(41,34,42,.22);
+}
+.secondary {
+  color: var(--ink);
+  background: rgba(255,245,232,.58);
+}
+.primary:active, .secondary:active { transform: translateY(3px); box-shadow: none; }
+.choices { width: 100%; display: grid; gap: 10px; }
+.tiny { min-height: 18px; margin: 12px 0 0; font-size: 11px; font-weight: 700; }
+.cake { font-size: 76px; margin: 4px 0; filter: drop-shadow(5px 7px 0 rgba(90,40,50,.1)); }
+.note {
+  margin: 22px 0;
+  padding: 18px;
+  border: 2px dashed rgba(41,34,42,.55);
+  border-radius: 16px;
+  background: rgba(255,245,232,.52);
+  font-size: 13px;
+  line-height: 1.75;
+  text-align: left;
+}
+.signature { margin: 22px 0 0; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.bottomline { margin-top: 8px; }
+.confetti {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+.confetti span {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--c);
+  left: var(--x);
+  animation: fall var(--d) linear infinite;
+  animation-delay: var(--delay);
+  opacity: .8;
+}
+@keyframes enter {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fall {
+  to { transform: translate3d(30px, 110vh, 0) rotate(700deg); }
+}
+@media (max-height: 700px) {
+  .phone { min-height: calc(100svh - 24px); padding: 15px 18px 13px; }
+  .screen { padding: 12px 2px; }
+  .sticker { width: 74px; height: 74px; font-size: 38px; margin-bottom: 12px; border-radius: 24px; }
+  h1 { font-size: clamp(32px, 8vw, 40px); }
+  .sub { margin: 12px auto 17px; }
+  .note { margin: 14px 0; padding: 14px; }
+}
